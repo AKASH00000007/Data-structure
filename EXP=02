@@ -27,23 +27,10 @@ void delete(int element) {
             break;
         }
     }
-    if (found == 0) {
-        printf("%d not found in the array.\n", element);
-    } else {
-        printf("%d deleted.\n", element);
-    }
-}
-            break;
-        }
-    }
     if (found) {
-        for (int j = i; j < size - 1; j++) {
-            arr[j] = arr[j + 1];
-        }
-        size--;
-        printf("Deleted %d\n", element);
+        printf("%d deleted.\n", element);
     } else {
-        printf("Element %d not found!\n", element);
+        printf("%d not found in the array.\n", element);
     }
 }
 
@@ -60,12 +47,13 @@ int binary_search(int element) {
     int left = 0, right = size - 1, mid;
     while (left <= right) {
         mid = left + (right - left) / 2;
-        if (arr[mid] == element)
+        if (arr[mid] == element) {
             return mid;
-        else if (arr[mid] < element)
+        } else if (arr[mid] < element) {
             left = mid + 1;
-        else
+        } else {
             right = mid - 1;
+        }
     }
     return -1;
 }
@@ -89,35 +77,35 @@ void display() {
     }
     printf("\n");
 }
-    printf("\n");
-    int main() {
-        insert(30);
-        insert(10);
-        insert(50);
-        insert(20);
-        insert(40);
-        display();
 
-        int element = 20;
-        int lin_result = linear_search(element);
-        if (lin_result != -1) {
-            printf("Linear Search: Element %d found at index %d\n", element, lin_result);
-        } else {
-            printf("Element %d not found in Linear Search\n", element);
-        }
+int main() {
+    insert(30);
+    insert(10);
+    insert(50);
+    insert(20);
+    insert(40);
+    display();
 
-        sort_array();
-        int bin_result = binary_search(element);
-        if (bin_result != -1) {
-            printf("Binary Search: Element %d found at index %d\n", element, bin_result);
-        } else {
-            printf("Element %d not found in Binary Search\n", element);
-        }
-        return 0;
+    int element = 20;
+    int lin_result = linear_search(element);
+    if (lin_result != -1) {
+        printf("Linear Search: Element %d found at index %d\n", element, lin_result);
+    } else {
+        printf("Element %d not found in Linear Search\n", element);
     }
+
+    sort_array();
+    display();
+
+    int bin_result = binary_search(element);
+    if (bin_result != -1) {
+        printf("Binary Search: Element %d found at index %d\n", element, bin_result);
+    } else {
         printf("Element %d not found in Binary Search\n", element);
     }
+
     delete(30);
     display();
+
     return 0;
 }
