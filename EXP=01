@@ -4,7 +4,7 @@ int main() {
     float a, b, c, d, e;
     float sum, avg;
 
-    // Input marks
+    
     printf("Enter Marks (0-100): ");
     scanf("%f", &a);
     printf("Enter Marks (0-100): ");
@@ -16,7 +16,7 @@ int main() {
     printf("Enter Marks (0-100): ");
     scanf("%f", &e);
 
-    // Validate marks
+    
     if (a < 0 || a > 100 ||
         b < 0 || b > 100 ||
         c < 0 || c > 100 ||
@@ -26,11 +26,9 @@ int main() {
         return 1; // Exit the program with an error code
     }
 
-    // Calculate sum and average
     sum = a + b + c + d + e;
     avg = sum / 5;
 
-    // Output average and result
     printf("Average = %.2f\n", avg);
     if (avg >= 40) {
         printf("Passed\n");
