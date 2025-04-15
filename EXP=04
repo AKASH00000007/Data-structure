@@ -18,10 +18,6 @@ void insertAtBeginning(int value) {
     newNode->next = head;
     head = newNode;
 }
-    newNode->data = value;
-    newNode->next = head;
-    head = newNode;
-}
 
 void insertAtEnd(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -57,7 +53,6 @@ void displayList() {
     }
     printf("NULL\n");
 }
-}
 
 int main() {
     int choice, value;
@@ -90,23 +85,6 @@ int main() {
                 return 0;
             default:
                 printf("Invalid choice! Please try again.\n");
-        }
-    }
-    return 0;
-}
-            case 2:
-                printf("Enter value to insert: ");
-                scanf("%d", &value);
-                insertAtEnd(value);
-                break;
-            case 3:
-                displayList();
-                break;
-            case 4:
-                printf("Exiting...\n");
-                return 0;
-            default:
-                printf("Invalid choice. Try again.\n");
         }
     }
     return 0;
