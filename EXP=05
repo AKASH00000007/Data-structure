@@ -15,7 +15,6 @@ void selectionSort(int arr[], int n) {
         arr[min_idx] = temp;
     }
 }
-}
 
 int main() {
     int array[] = {5, 10, 8, 5, 6, 9, 15, 2, 3};
