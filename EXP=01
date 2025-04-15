@@ -1,38 +1,42 @@
 #include <stdio.h>
-int main () {
 
-float a, b, c, d, e;
-float sum, avg;
+int main() {
+    float a, b, c, d, e;
+    float sum, avg;
 
-printf("Enter Marks : ");
-scanf("%f", &a);
+    // Input marks
+    printf("Enter Marks (0-100): ");
+    scanf("%f", &a);
+    printf("Enter Marks (0-100): ");
+    scanf("%f", &b);
+    printf("Enter Marks (0-100): ");
+    scanf("%f", &c);
+    printf("Enter Marks (0-100): ");
+    scanf("%f", &d);
+    printf("Enter Marks (0-100): ");
+    scanf("%f", &e);
 
-printf("Enter Marks : ");
-scanf("%f", &b);
-
-printf("Enter Marks : ");
-scanf("%f", &c);printf("Enter Marks : ");
-scanf("%f", &d);
-
-printf("Enter Marks : ");
-scanf("%f", &e);
-
-sum = a + b + c + d + e;
-avg = sum / 5;
-
-if (a <= 0 || a >= 100 ||
-    b <= 0 || b >= 100 ||
-    c <= 0 || c >= 100 ||
-    d <= 0 || d >= 100 ||
-    e <= 0 || e >= 100) {
-    printf("Re-enter the Marks \n");
-} else {
-    printf("Average = %.2f \n", avg);
-    if (avg >= 40) {
-        printf("Passed \n");
-    } else {
-        printf("Failed \n");
+    // Validate marks
+    if (a < 0 || a > 100 ||
+        b < 0 || b > 100 ||
+        c < 0 || c > 100 ||
+        d < 0 || d > 100 ||
+        e < 0 || e > 100) {
+        printf("Invalid marks entered. Please re-enter marks within the range 0-100.\n");
+        return 1; // Exit the program with an error code
     }
-}
-return 0;
+
+    // Calculate sum and average
+    sum = a + b + c + d + e;
+    avg = sum / 5;
+
+    // Output average and result
+    printf("Average = %.2f\n", avg);
+    if (avg >= 40) {
+        printf("Passed\n");
+    } else {
+        printf("Failed\n");
+    }
+
+    return 0;
 }
