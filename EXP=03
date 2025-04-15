@@ -18,8 +18,6 @@ void push(int value) {
     newNode->next = top;
     top = newNode;
 }
-    return;
-}
 
 int pop() {
     if (top == NULL) {
@@ -34,33 +32,33 @@ int pop() {
 }
 
 int main() {
-    struct Node* top = NULL;
     int choice, value;
 
-    printf("\nStack Operations:\n");
-    printf("1. Push\n2. Pop\n3. Exit\n");
-    printf("Enter your choice: ");
-    scanf("%d", &choice);
+    do {
+        printf("\nStack Operations:\n");
+        printf("1. Push\n2. Pop\n3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-    switch (choice) {
-        case 1:
-            printf("Enter value to push: ");
-            scanf("%d", &value);
-            push(value);
-            break;
-        case 2:
-            value = pop();
-            if (value != -1) {
-                printf("Popped value: %d\n", value);
-            }
-            break;
-        case 3:
-            printf("Exiting program.\n");
-            break;
-        default:
-            printf("Invalid choice! Please try again.\n");
-    }
-} while (choice != 3);
+        switch (choice) {
+            case 1:
+                printf("Enter value to push: ");
+                scanf("%d", &value);
+                push(value);
+                break;
+            case 2:
+                value = pop();
+                if (value != -1) {
+                    printf("Popped value: %d\n", value);
+                }
+                break;
+            case 3:
+                printf("Exiting program.\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    } while (choice != 3);
 
-return 0;
+    return 0;
 }
